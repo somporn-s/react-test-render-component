@@ -7,6 +7,8 @@ import PageB from "./pages/PageB";
 import Homepage from "./pages/Homepage";
 import PageAChild from "./pages/PageAChild";
 import PageAChild2 from "./pages/PageAChild2";
+import PageHOC from "./pages/PageHOC";
+import PageUpdateStore from "./pages/PageUpdateStore";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -27,11 +29,13 @@ function App() {
           </button>
           <Routes>
             <Route path="" Component={Homepage}></Route>
-            <Route path="page-a" Component={PageA}>
-              <Route path="page-a-child" Component={PageAChild}></Route>
-              <Route path="page-a-child2" Component={PageAChild2}></Route>
+            <Route path="page-a" element={<PageA />}>
+              <Route path="page-a-child" element={<PageAChild />}></Route>
+              <Route path="page-a-child2" element={<PageAChild2 />}></Route>
             </Route>
             <Route path="page-b" Component={PageB}></Route>
+            <Route path="page-hoc" Component={PageHOC}></Route>
+            <Route path="page-update-store" Component={PageUpdateStore}></Route>
           </Routes>
         </>
       </Layout>

@@ -12,9 +12,7 @@ const PageB = () => {
       <button onClick={() => setCount((count) => ++count)}>
         PageB {count}
       </button>
-      <ComponentPageB>
-        {<ComponentPageBChild />}
-      </ComponentPageB>
+      <ComponentPageB>{ComponentPageBChild}</ComponentPageB>
     </div>
   );
 };

@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import ComponentPageBChild from "./ComponentPageBChild";
 
-const ComponentPageB = ({ children }: any) => {
+const ComponentPageB = ({children: Children}: any) => {
+
   const [count, setCount] = useState(0);
   console.log("reder ComponentPageB : ", count);
   return (
@@ -9,7 +10,7 @@ const ComponentPageB = ({ children }: any) => {
       <button onClick={() => setCount((count) => ++count)}>
         click ComponentPageB {count}
       </button>
-      {children}
+      {<Children />}
     </div>
   );
 };

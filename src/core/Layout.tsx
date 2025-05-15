@@ -10,27 +10,22 @@ const Layout = ({ children }: LayoutProps) => {
 
   return (
     <div style={{ display: "flex", width: "100%" }}>
-      <div className="menu" style={{ background: "red", width: "50%" }}>
+      <div className="menu" style={{ background: "#dcdcdc", width: "50%" }}>
         Layout menu
         <button onClick={() => setCount((count) => ++count)}>
           Layout Layout {count}
         </button>
-        <ul>
-          <li>
-            <Link to="/page-a/">PageA</Link>
-            <ul>
-              <li>
-                <Link to="/page-a/page-a-child">PageAChild</Link>
-              </li>
-              <li>
-                <Link to="/page-a/page-a-child2">PageAChild2</Link>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <Link to="/page-b">PageB</Link>
-          </li>
-        </ul>
+        <hr />
+        <Link to="/page-a/">PageA</Link> <br />
+        <Link to="/page-a/page-a-child">PageAChild</Link> <br />
+        <Link to="/page-a/page-a-child2">PageAChild2</Link>
+        <br /> <br />
+        <Link to="/page-b">PageB</Link>
+        <br />
+        <Link to="/page-hoc">Page HOC</Link>
+        <br />
+        <Link to="/page-update-store">Page Update Store</Link>
+        <br />
       </div>
       <div className="menu" style={{ background: "gray", width: "100%" }}>
         <p>Content</p>
