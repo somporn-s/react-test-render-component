@@ -13,4 +13,4 @@ const PageAChild2 = () => {
   );
 };
 
-export default PageAChild2;
+export default React.memo(PageAChild2);

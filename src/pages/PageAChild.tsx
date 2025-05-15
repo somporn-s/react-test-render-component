@@ -13,4 +13,4 @@ const PageAChild = () => {
   );
 };
 
-export default PageAChild;
+export default React.memo(PageAChild);

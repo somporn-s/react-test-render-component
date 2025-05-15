@@ -1,12 +1,12 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Layout from "./core/Layout";
-import PageA from "./pages/PageA";
-import PageB from "./pages/PageB";
-import Homepage from "./pages/Homepage";
-import PageAChild from "./pages/PageAChild";
-import PageAChild2 from "./pages/PageAChild2";
+import PageA from "./PageA";
+import PageB from "./PageB";
+import Homepage from "./Homepage";
+import PageAChild from "./PageAChild";
+import Layout from "../core/Layout";
+import PageAChild2 from "./PageAChild2";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -21,7 +21,6 @@ function App() {
     <BrowserRouter>
       <Layout>
         <>
-          <Homepage></Homepage>
           <button onClick={() => setCount((count) => ++count)}>
             Click App In Layout {count}
           </button>
@@ -39,4 +38,4 @@ function App() {
   );
 }
 
-export default App;
+export default React.memo(App);

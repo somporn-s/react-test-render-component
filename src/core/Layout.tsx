@@ -40,4 +40,4 @@ const Layout = ({ children }: LayoutProps) => {
   );
 };
 
-export default Layout;
+export default React.memo(Layout);
