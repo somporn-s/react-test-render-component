@@ -1,32 +1,40 @@
 import { useState } from "react";
 import "./App.css";
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Layout from "./core/Layout";
 import PageA from "./pages/PageA";
 import PageB from "./pages/PageB";
 import Homepage from "./pages/Homepage";
+import PageAChild from "./pages/PageAChild";
+import PageAChild2 from "./pages/PageAChild2";
 
 function App() {
   const [count, setCount] = useState(0);
 
-  console.log("App count", count);
+  console.log(
+    "App count",
+    count,
+    "// layout มีเรียกใช้งานใน component นี้จึงถูก render ไปด้วย"
+  );
 
   return (
-    <Layout>
-      <>
-        <button onClick={() => setCount((count) => ++count)}>
-          Click App {count}
-        </button>
-
-        <BrowserRouter>
-          <Route path="/" Component={Homepage}></Route>
-          <Route path="/page-a" Component={PageA}>
-            <Route path="/page-a-child"></Route>
-          </Route>
-          <Route path="/page-b" Component={PageB}></Route>
-        </BrowserRouter>
-      </>
-    </Layout>
+    <BrowserRouter>
+      <Layout>
+        <>
+          <button onClick={() => setCount((count) => ++count)}>
+            Click App In Layout {count}
+          </button>
+          <Routes>
+            <Route path="" Component={Homepage}></Route>
+            <Route path="page-a" element={<PageA />}>
+              <Route path="page-a-child" element={<PageAChild />}></Route>
+              <Route path="page-a-child2" element={<PageAChild2 />}></Route>
+            </Route>
+            <Route path="page-b" Component={PageB}></Route>
+          </Routes>
+        </>
+      </Layout>
+    </BrowserRouter>
   );
 }
 

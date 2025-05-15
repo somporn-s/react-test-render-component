@@ -1,7 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 
 const PageB = () => {
-  return <div>PageB</div>;
+  const [count, setCount] = useState(0);
+  console.log("PageB count", count);
+  return (
+    <div style={{ background: "blue" }}>
+      <h4>PageB</h4>
+      <button onClick={() => setCount((count) => ++count)}>
+        PageB {count}
+      </button>
+    </div>
+  );
 };
 
 export default PageB;

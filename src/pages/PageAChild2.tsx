@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 
-const PageAChild = () => {
+const PageAChild2 = () => {
   const [count, setCount] = useState(0);
-  console.log("PageA child count", count);
+  console.log("PageA child2 count", count);
   return (
     <div style={{ background: "skyblue" }}>
       <button onClick={() => setCount((count) => ++count)}>
-        PageA child {count}
+        PageA child2 {count}
       </button>
-      PageAChild
+      Page A Child2
     </div>
   );
 };
 
-export default PageAChild;
+export default PageAChild2;
