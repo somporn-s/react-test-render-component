@@ -10,7 +10,7 @@ const ComponentHOCChild = () => {
       <button onClick={() => setCount((count) => ++count)}>
         click ComponentHOCChild {count}
       </button>
-      <p><span>ss</span>ComponentHOCChild</p>
+      <p>ComponentHOCChild</p>
     </div>
   );
 };

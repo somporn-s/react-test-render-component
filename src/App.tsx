@@ -29,9 +29,9 @@ function App() {
           </button>
           <Routes>
             <Route path="" Component={Homepage}></Route>
-            <Route path="page-a" element={<PageA />}>
-              <Route path="page-a-child" element={<PageAChild />}></Route>
-              <Route path="page-a-child2" element={<PageAChild2 />}></Route>
+            <Route path="page-a" Component={PageA}>
+              <Route path="page-a-child" Component={PageAChild}></Route>
+              <Route path="page-a-child2" Component={PageAChild2}></Route>
             </Route>
             <Route path="page-b" Component={PageB}></Route>
             <Route path="page-hoc" Component={PageHOC}></Route>

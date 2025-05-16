@@ -15,4 +15,4 @@ const ComponentPageB = ({children: Children}: any) => {
   );
 };
 
-export default React.memo(ComponentPageB);
+export default ComponentPageB;

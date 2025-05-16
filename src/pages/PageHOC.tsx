@@ -1,4 +1,4 @@
-import React, { Children, useState } from "react";
+import React, { Children, useMemo, useState } from "react";
 import ComponentHOCChild from "../components/ComponentHOCChild";
 import ComponentHOC from "../components/ComponentHOC";
 
@@ -6,6 +6,7 @@ const PageHOC = () => {
   const [count, setCount] = useState(0);
   console.log("PageHOC : ", count);
 
+  const componentHOCChild = useMemo(() => <ComponentHOCChild />, []);
   return (
     <div>
       <h4>PageHOC</h4>
@@ -28,9 +29,10 @@ const PageHOC = () => {
         PageHOC {count}
       </button>
       <ComponentHOC
-        element={<ComponentHOCChild />}
-        // Component={ComponentHOCChild}
+      // element={<ComponentHOCChild />}
+      // Component={ComponentHOCChild}
       />
+      {componentHOCChild}
     </div>
   );
 };
